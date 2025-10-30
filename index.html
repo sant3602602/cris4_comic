@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cómic Experiencia Cristiana</title>
+<style>
+    body {
+        margin: 0;
+        font-family: "Arial", sans-serif;
+        background: linear-gradient(to bottom, #fff4e6, #ffffff);
+        overflow-x: hidden;
+    }
+    .comic-page {
+        width: 100%;
+        height: 100vh;
+        padding: 30px;
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        text-align: center;
+    }
+    .comic-page.active {
+        display: flex;
+    }
+    h1, h2 {
+        margin-bottom: 20px;
+        color: #4a2c00;
+    }
+    p {
+        margin: 14px 0;
+        max-width: 900px;
+        font-size: 18px;
+        color: #3a2b1c;
+        line-height: 1.4;
+    }
+    .btn-next, .btn-prev {
+        padding: 12px 30px;
+        margin: 10px;
+        font-size: 16px;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        background-color: #ff9933;
+        color: #fff;
+        transition: 0.2s;
+    }
+    .btn-next:hover, .btn-prev:hover {
+        background-color: #e67d13;
+    }
+    #cross {
+        width: 80px;
+        height: 120px;
+        background-color: brown;
+        position: absolute;
+        bottom: 80px;
+        left: 50%;
+        transform: translateX(-50%);
+        cursor: pointer;
+        border-radius: 6px;
+    }
+    #cross::before {
+        content: "";
+        position: absolute;
+        top: 45px;
+        left: -25px;
+        width: 130px;
+        height: 20px;
+        background-color: brown;
+        border-radius: 4px;
+    }
+    #crossMessage {
+        position: absolute;
+        padding: 10px 18px;
+        background: rgba(255,255,255,0.98);
+        border: 2px solid brown;
+        border-radius: 10px;
+        font-weight: bold;
+        display: none;
+        white-space: normal;
+        max-width: 250px;
+        z-index: 2000;
+        color: #4a2c00;
+        font-size: 15px;
+        line-height: 1.3;
+    }
+</style>
+</head>
+<body>
+
+<!-- Página 1 -->
+<div class="comic-page active" id="page1">
+    <h1>Experiencia Cristiana — Camino, Cruz y Vida</h1>
+    <p>
+        Este cómic digital recoge el corazón de la fe cristiana: 
+        la pasión, muerte y resurrección de Jesús, 
+        y cómo su modo de ser sigue marcando vidas y decisiones hoy.
+    </p>
+    <p>
+        Jesús no fue una idea, fue un estilo de vida. No murió por casualidad, 
+        ni por debilidad… murió porque eligió enfrentarse a un sistema injusto 
+        y vivir desde un amor radical y liberador.
+    </p>
+    <button class="btn-next" onclick="nextPage()">Comenzar</button>
+</div>
+
+<!-- Página 2 -->
+<div class="comic-page" id="page2">
+    <h2>Jesús vs. el sistema del templo</h2>
+    <p>
+        Según <strong>Busto Sáiz</strong>, Jesús criticó el sistema religioso
+        porque se había convertido en una maquinaria fría, más preocupada por 
+        ritos, dinero y poder que por la dignidad humana y el encuentro real con Dios.
+    </p>
+    <p>
+        Jesús defendió a los pobres, denunció abusos de autoridad religiosa 
+        y ofreció un camino nuevo: la cercanía, la compasión, la coherencia 
+        y la libertad para amar sin miedo.
+    </p>
+    <p><strong>Enseñanza:</strong> seguir la verdad aunque incomode. No acomodarse. No callar ante lo injusto.</p>
+    <p><strong>Mi experiencia:</strong> En el colegio, cuando un compañero con dificultades económicas era 
+    tratado distinto, hablé con la coordinación y organicé un grupo estudiantil 
+    para apoyar estudiantes vulnerables. Aprendí que la fe no es pasiva: 
+    es acción, aunque genere incomodidad.</p>
+
+    <button class="btn-prev" onclick="prevPage()">Anterior</button>
+    <button class="btn-next" onclick="nextPage()">Siguiente</button>
+</div>
+
+<!-- Página 3 -->
+<div class="comic-page" id="page3">
+    <h2>La cruz y lo que pasó después</h2>
+    <p>
+        Para <strong>Pagola</strong>, la cruz no es derrota: es coherencia. 
+        Jesús muere porque su amor incomodó al poder. 
+        Su muerte revela la injusticia humana y la fidelidad divina.
+    </p>
+    <p>
+        La resurrección no fue un mito emocional. Fue una experiencia potente:
+        los discípulos pasaron del miedo a la valentía, 
+        de huir a predicar, de dudar a transformar el mundo.
+    </p>
+    <p>
+        Significa que la última palabra no la tiene el dolor ni el fracaso, 
+        sino la vida que Dios confirma.
+    </p>
+
+    <p><strong>Mi experiencia:</strong> En un semestre duro pensé rendirme.
+    No dormía bien, me sentía perdido. Decidí pedir ayuda psicológica y espiritual,
+    retomé mis rutinas y empecé a confiar otra vez en mi proceso. 
+    No resucité como Jesús, pero volví a encontrar vida donde veía cansancio.
+    </p>
+
+    <button class="btn-prev" onclick="prevPage()">Anterior</button>
+    <button class="btn-next" onclick="nextPage()">Siguiente</button>
+</div>
+
+<!-- Página 4 -->
+<div class="comic-page" id="page4">
+    <h2>Maestro y Liderazgo Real</h2>
+    <p>
+        En <strong>Mazariegos</strong>, llaman a Jesús “Maestro” no porque enseñaba ideas,
+        sino porque acompañaba, caminaba, corregía con amor y enseñaba con ejemplo.
+    </p>
+    <p>
+        Un liderazgo auténtico, según él, no controla: inspira, escucha, cuida y se entrega.
+    </p>
+
+    <p><strong>Mi experiencia:</strong> En la universidad me dieron la responsabilidad
+    de coordinar un pequeño grupo de estudio. En vez de mandar, empecé a preguntar:
+    “¿qué necesitan?”, “¿cómo lo hacemos juntos?”. 
+    Al final, sacar buenas notas fue lo de menos: crecimos como equipo y personas.
+    </p>
+
+    <button class="btn-prev" onclick="prevPage()">Anterior</button>
+    <button class="btn-next" onclick="nextPage()">Siguiente</button>
+</div>
+
+<!-- Página 5 -->
+<div class="comic-page" id="page5">
+    <h2>Reflexión final</h2>
+    <p>
+        Haz clic en la cruz para recibir un mensaje inspirador.
+        Este no es un final, sino un envío, como los discípulos: 
+        a vivir con sentido, a actuar con amor, y a creer que la esperanza nunca muere.
+    </p>
+
+    <div id="cross"></div>
+    <div id="crossMessage"></div>
+
+    <button class="btn-prev" onclick="prevPage()">Anterior</button>
+</div>
+
+<script>
+let currentPage = 1;
+const totalPages = 5;
+
+function showPage(page) {
+    for(let i = 1; i <= totalPages; i++){
+        document.getElementById("page" + i).classList.remove("active");
+    }
+    document.getElementById("page" + page).classList.add("active");
+}
+
+function nextPage(){ if(currentPage < totalPages) showPage(++currentPage); }
+function prevPage(){ if(currentPage > 1) showPage(--currentPage); }
+
+const cross = document.getElementById("cross");
+cross.addEventListener("click", () => {
+    const messages = [
+        "El amor es más fuerte que el miedo.",
+        "La cruz no fue el final, fue el comienzo.",
+        "Donde otros ven muerte, Dios siembra vida.",
+        "Ser grande es aprender a servir.",
+        "No estás solo. Sigue caminando.",
+
+        // PREGUNTA 1 — José Ramón / Templo y jóvenes
+        "📖 Jesús se opuso al sistema del templo porque se volvió negocio y poder, no encuentro con Dios.\n\n✨ Enseñanza para los jóvenes: tener una fe crítica, defender la justicia y no callar ante lo injusto.",
+
+        // PREGUNTA 2 — Pagola / Cruz, resurrección, discípulos
+        "✝️ La cruz muestra el amor fiel de Jesús y la injusticia del poder.\nDios lo resucita como un SÍ definitivo a la vida.\n🔥 La resurrección transformó discípulos con miedo en testigos valientes.",
+
+        // PREGUNTA 3 — Emilio / Maestro y liderazgo
+        "👨‍🏫 Lo llaman Maestro porque enseñaba con ejemplo y cercanía.\n🌟 Liderazgo auténtico: servir, escuchar, inspirar y vivir con coherencia."
+    ];
+
+    const msg = document.getElementById("crossMessage");
+    msg.innerText = messages[Math.floor(Math.random() * messages.length)];
+
+    const rect = cross.getBoundingClientRect();
+    msg.style.left = (rect.left + rect.width/2) + "px";
+    msg.style.top = (rect.top - msg.offsetHeight - 10) + "px";
+    msg.style.transform = "translateX(-50%)";
+    msg.style.display = "block";
+    setTimeout(() => msg.style.display = "none", 4200);
+});
+</script>
+
+</body>
+</html>
